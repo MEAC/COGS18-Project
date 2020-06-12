@@ -1,4 +1,4 @@
-# COGS18-Project
+# COGS 18: Steam Charts Chat Bot
 ## Description
 This is a chat bot uses many of the basic functions from A3 Chatbot. Although it uses lots of functions we wrote in A3 it behaves differently from the one we made. What makes this chat bot different from the one in assignment 3 is how it web scrapes information from the website 'https://steamcharts.com/ '. This website has information about all the top played games on Steam. 
 
