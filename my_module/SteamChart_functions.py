@@ -419,8 +419,6 @@ top games on Steam!\n'''
 
         # Catch-all to say something if msg not caught & processed so far
         if not out_msg:
-            if is_link(msg) == True:
-                continue
             out_msg = random.choice(UNKNOWN)
 
         print('OUTPUT:', out_msg)
