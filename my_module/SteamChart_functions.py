@@ -265,12 +265,6 @@ PLATFORMS_THAT_ARE_NOT_STEAM_OUT = ['This bot only works with Steam',
                                     'Why are you mentioning other platforms',
                                     "Please don't input other platforms"]
 
-COMP_IN = ['python', 'code', 'computer', 'algorithm', ]
-COMP_OUT = ["Python is what I'm made of.", \
-            "Did you know I'm made of code!?", \
-            "Computers are so magical", \
-            "Do you think I'll pass the Turing test?"]
-
 PEOPLE_IN = ['Newell', 'Kojima', 'Howard', 'Persson']
 PEOPLE_OUT = ['is a video game developer', 'knows how to create amazing games']
 PEOPLE_NAMES = {'Newell': 'Gabe', 'Kojima': 'Hideo', 'Howard': 'Todd',
@@ -388,10 +382,6 @@ top games on Steam!\n'''
             # steam is
             outs.append(selector(msg, USER_INPUTED_STEAM_IN,
                                  USER_INPUTED_STEAM_OUT))
-
-            # Check if the input looks like a computer thing, add a computer 
-            # output if so
-            outs.append(selector(msg, COMP_IN, COMP_OUT))
             
             # Check if the input mentions a person that is specified, add a 
             # person output if so
