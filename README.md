@@ -21,3 +21,5 @@ Here are some of the more popular games avaliable on Steam if you want to check 
 **Please note that the user MUST input the exact name of the game title from Steam.**
 
 **If the data that the bot outputs doesn't correlate with the steamcharts website then restart your notebook and try again.**
+
+**This project requires 'requests' and 'numpy'**
