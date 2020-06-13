@@ -8,6 +8,7 @@ import webbrowser
 
 from bs4 import BeautifulSoup
 from time import sleep
+from requests import get
 
 class web_scrape:
     """
@@ -19,9 +20,9 @@ class web_scrape:
     top_games_peak_players = []
     top_games_hours_played_30days = []
 
-    # Needed to loop through pages 1 to 40
+    # Needed to loop through pages 1 to 20
     # Code taken from and inspired by https://bit.ly/30uch6O
-    pages = np.arange(1, 10)
+    pages = np.arange(1, 21)
 
     for page in pages:
         # Get the url we are scraping from including the page
@@ -33,12 +34,6 @@ class web_scrape:
 
         # Locate the table we want to get information from
         top_games_table = soup.find('table', class_ = 'common-table')
-
-        # Wait 1 second after scraping from one page in order to avoid
-        # asking the server for multiple requests in too short of a time
-        # to avoid getting our IP address in trouble.
-        #sleep(1)
-
 
         # Parse through and get information we want from the 
         # HTML markup language
@@ -254,7 +249,7 @@ USER_INPUTED_GAMES_IN = ['games']
 USER_INPUTED_GAMES_OUT = ['Have fun looking at the list of Steam games.']
 
 USER_INPUTED_STEAM_IN = ['steam', 'Steam']
-USER_INPUTED_STEAM_OUT = ['Steam is a video game digital distrubtion ' +
+USER_INPUTED_STEAM_OUT = ['Steam is a video game digital distribution ' +
                           'service by the company Valve where users ' +
                           'can buy and play video games']
 
@@ -277,8 +272,6 @@ UNKNOWN = ["Umm... That's not a game on Steam.",
           "you're lost..."]
 
 QUESTION = "I can't answer every question. Ask me about a game!"
-
-
         
 def have_a_chat():
     """
@@ -287,7 +280,7 @@ def have_a_chat():
     """
     greeting_msg = '''Welcome to the Steam charts bot! 
 I love to track the data on all of the
-top games people are playing right now on Steam!!!
+top 500 games people are playing right now on Steam!!!
 Input a video game that is avaliable on Steam.\n'''
     print(greeting_msg)
 
@@ -295,16 +288,12 @@ Input a video game that is avaliable on Steam.\n'''
 a list of all Steam games please type 'games'\n'''
     print(open_games_webpage)
 
-    please_wait_msg = '''
-Please give me 50 seconds to grab a list of the current
-top games on Steam!\n'''
-    print(please_wait_msg)
-
     # Call the web_scrape class and create the object
     # website
     website = web_scrape()
 
     # Number of times user has inputed into bot
+    # This serves as a counter
     times_through_chat = 0
 
     chat = True
@@ -321,13 +310,12 @@ top games on Steam!\n'''
         if is_link(msg):
             webbrowser.open('https://steamcharts.com/top')
             
-        
         # Check if user input is in our games list
         # If user input is in list then output information
         if msg in website.top_games_names:
             index_of_game = website.top_games_names.index(msg)
             print('OUTPUT:', 'Looks like', msg, 
-                  'is in the top 1000 charts right now!')
+                  'is in the top 500 charts right now!')
                   
             print('OUTPUT:', 'There are also',
                   website.top_games_current_players[index_of_game], 
