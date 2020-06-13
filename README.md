@@ -19,7 +19,7 @@ Here are some of the more popular games avaliable on Steam if you want to check 
 - Destiny 2
 
 ## Notes to consider:
-- **When you run (from my_module.SteamChart_functions import *) and the pytest, it will take a couple seconds before you can run the have_a_chat function to run due to parsing through 20 web pages.**
+- **When you run (from my_module.SteamChart_functions import ) and the pytest, it will take a couple seconds before you can run the have_a_chat function to run due to parsing through 20 web pages.**
     - **Please be patient and give the code time to run.**
 
 - **Please note that the user MUST input the exact name of the game title from Steam.**
