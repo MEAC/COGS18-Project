@@ -7,7 +7,6 @@ import numpy as np
 import webbrowser
 
 from bs4 import BeautifulSoup
-from time import sleep
 from requests import get
 
 class web_scrape:
